@@ -296,11 +296,24 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */){
+function addArtist(artistArray,name, birthYear, currentYear, genre, nationality, bio ){
 
     /* Code here */
+    artistArray.push({
+      "id": artistArray.length,
+      "name": name,
+      "years": `${birthYear} - ${currentYear}`,
+      "genre": genre,
+      "nationality": nationality,
+      "bio": bio
+    })
 
+    return artistArray;
   }
+
+  addArtist(artists, 'Johnny Xiong', 1992, 2020, "Web Design", "Asian-American", "lorem ipsum");
+  console.log(artists.length);
+  console.log(artists[20]);
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
