@@ -365,11 +365,13 @@ The function should console.log 50 chunks of HTML code that match the structure 
 function getHTML(data){
 
     /* Code here */
-    // for (str in data) {
-    //   console.log(str)
-    // }
+    for (let artist in data) {
 
+      console.log(`<div id="${data[artist].name.split(' ').join('-')}">\n<div class="image">\n\t<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>\n</div>\n<div class = "name">\n\t<a href="${data[artist].wikipedia}"> ${data[artist].name}</a>\n</div>\n<div class = "bio">${data[artist].bio}\n</div>\n</div>`)
+    }
   }
+
+  getHTML(artists);
 
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
