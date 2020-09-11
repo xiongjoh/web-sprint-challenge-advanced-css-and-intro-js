@@ -211,6 +211,10 @@ const artists = [
 console.log(artists[0].name);
 console.log(artists[2].bio);
 
+//Stretch 3 Code
+
+
+
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
@@ -256,6 +260,19 @@ function get20s(array){
 }
 
 console.log(get20s(artists));
+
+// Stretch 3 refactoring
+
+function new20s(array) {
+
+  let artistArray = array.filter(artist => artist.years.split(' ')[0] > 1900 && artist.years.split(' ')[2] < 2000);
+  let nameArray = [];
+  artistArray.forEach(artist => nameArray.push(artist.name));
+  return nameArray;
+
+}
+
+console.log(new20s(artists));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -362,46 +379,46 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(data){
+// function getHTML(data){
 
-    /* Code here */
-    for (let artist in data) {
+//     /* Code here */
+//     for (let artist in data) {
 
-      console.log(`<div id="${data[artist].name.split(' ').join('-')}">\n<div class="image">\n\t<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>\n</div>\n<div class = "name">\n\t<a href="${data[artist].wikipedia}"> ${data[artist].name}</a>\n</div>\n<div class = "bio">${data[artist].bio}\n</div>\n</div>`)
-    }
-  }
+//       console.log(`<div id="${data[artist].name.split(' ').join('-')}">\n<div class="image">\n\t<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>\n</div>\n<div class = "name">\n\t<a href="${data[artist].wikipedia}"> ${data[artist].name}</a>\n</div>\n<div class = "bio">${data[artist].bio}\n</div>\n</div>`)
+//     }
+//   }
 
-  getHTML(artists);
+//   getHTML(artists);
 
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(array){
+// function randomize(array){
 
-    /* Code here */
+//     /* Code here */
 
-    let newRandomArray = [];
-    let randNum = 0;
-    let usedRandNum = [array.length+1];
-    let i = 0;
-    while (newRandomArray.length != array.length){
-      randNum = Math.floor(Math.random() * array.length);
-      if (usedRandNum.includes(randNum) === false) {
-        usedRandNum.push(randNum);
-        newRandomArray.push(array[randNum]);
-      }
-      else {
-        i++
-        if (i > 100) {
-          console.log(`${i} duplicated random numbers found, too many loops terminating and returning incomplete array`)
-          return newRandomArray
-        }
-      }
-    }
-    return newRandomArray;
-  }
+//     let newRandomArray = [];
+//     let randNum = 0;
+//     let usedRandNum = [array.length+1];
+//     let i = 0;
+//     while (newRandomArray.length != array.length){
+//       randNum = Math.floor(Math.random() * array.length);
+//       if (usedRandNum.includes(randNum) === false) {
+//         usedRandNum.push(randNum);
+//         newRandomArray.push(array[randNum]);
+//       }
+//       else {
+//         i++
+//         if (i > 100) {
+//           console.log(`${i} duplicated random numbers found, too many loops terminating and returning incomplete array`)
+//           return newRandomArray
+//         }
+//       }
+//     }
+//     return newRandomArray;
+//   }
 
-  console.log(randomize(artists));
+//   console.log(randomize(artists));
 
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
